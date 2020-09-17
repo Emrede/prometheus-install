@@ -6,12 +6,12 @@ echo "# === Prometheus Node Exporter Installation for Ubuntu  === #"
 echo "#############################################################"
 
 loading(){
-    echo -ne '#####                     (33%)\r'
+    printf '#####                     (33%)\r'
     sleep 1
-    echo -ne '#############             (66%)\r'
+    printf  '#############             (66%)\r'
     sleep 1
-    echo -ne '#######################   (100%)\r'
-    echo -ne '\n'
+    printf  '#######################   (100%)\r'
+    printf  '\n'
 }
 
 cd /tmp
