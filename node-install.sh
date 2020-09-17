@@ -1,23 +1,30 @@
 #!/bin/bash
 
 # Run without sudo
+#==================#
+# GLOBAL VARIABLES #
+#==================#
+NODE="node_exporter-1.0.1.linux-amd64"
+NODELINK="https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz"
+
 echo "#############################################################"
 echo "# === Prometheus Node Exporter Installation for Ubuntu  === #"
 echo "#############################################################"
 
 loading(){
-    printf '#####                     (33%)\r'
+    echo -ne '#####                     (33%)\r'
+    sleep 2
+    echo -ne '#############             (66%)\r'
+    sleep 2
+    echo -ne '#######################   (100%)\r'
     sleep 1
-    printf  '#############             (66%)\r'
-    sleep 1
-    printf  '#######################   (100%)\r'
-    printf  '\n'
+    echo -ne '\n'
 }
 
 cd /tmp
-wget https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
-tar xvfz node_exporter-1.0.1.linux-amd64.tar.gz
-sudo cp node_exporter-1.0.1.linux-amd64/node_exporter /usr/local/bin
+wget $NODELINK
+tar xvfz $NODE.tar.gz
+sudo cp $NODE/node_exporter /usr/local/bin
 node_exporter --version
 sleep 2
 
@@ -31,8 +38,8 @@ sudo systemctl daemon-reload
 sudo systemctl start node-exporter.service
 
 loading
-# sudo systemctl status node-exporter.service
 
 echo "# === Installation completed  ! === #"
 sleep 1
 
+sudo systemctl status node-exporter.service
