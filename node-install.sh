@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Run without sudo
 echo "#############################################################"
 echo "# === Prometheus Node Exporter Installation for Ubuntu  === #"
 echo "#############################################################"
@@ -19,6 +20,14 @@ sudo cp node-exporter.service /etc/systemd/system/
 sudo chmod 644 /etc/systemd/system/node-exporter.service
 sudo systemctl daemon-reload
 sudo systemctl start node-exporter.service
+
+echo -ne '#####                     (33%)\r'
+sleep 1
+echo -ne '#############             (66%)\r'
+sleep 1
+echo -ne '#######################   (100%)\r'
+echo -ne '\n'
+
 # sudo systemctl status node-exporter.service
 
 echo "# === Installation completed  ! === #"
