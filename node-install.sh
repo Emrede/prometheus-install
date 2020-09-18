@@ -15,7 +15,7 @@ loading(){
     echo -ne '#####                     (33%)\r'
     sleep 2
     echo -ne '#############             (66%)\r'
-    sleep 2
+    sleep 1
     echo -ne '#######################   (100%)\r'
     sleep 1
     echo -ne '\n'
@@ -26,19 +26,21 @@ wget $NODELINK
 tar xvfz $NODE.tar.gz
 sudo cp $NODE/node_exporter /usr/local/bin
 node_exporter --version
-sleep 2
+sleep 1
 
 echo "# === Systemd service is being installed ... === #"
-sleep 2
+sleep 1
 
 cd $HOME/prometheus-node-install
 sudo cp node-exporter.service /etc/systemd/system/
 sudo chmod 644 /etc/systemd/system/node-exporter.service
 sudo systemctl daemon-reload
+sudo systemctl enable node-exporter.service
 sudo systemctl start node-exporter.service
 
 loading
-
+echo "# Service is enabled ... # "
+sleep 1
 echo "# === Installation completed  ! === #"
 sleep 1
 
