@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # Run without sudo
+#=====# Uncomment for CentOS Installation =============#
+# sudo yum install wget
+# sudo yum install git
+#======================================================#
+
 #==================#
 # GLOBAL VARIABLES #
 #==================#
@@ -21,9 +26,11 @@ loading(){
     echo -ne '\n'
 }
 
+
+
 cd /tmp
 wget $NODELINK
-tar xvfz $NODE.tar.gz
+tar -xvfz $NODE.tar.gz
 sudo cp $NODE/node_exporter /usr/local/bin
 node_exporter --version
 sleep 1
