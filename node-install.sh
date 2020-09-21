@@ -30,7 +30,7 @@ loading(){
 
 cd /tmp
 wget $NODELINK
-tar -xvfz /tmp/$NODE.tar.gz
+tar -xzf /tmp/$NODE.tar.gz
 sudo cp /tmp/$NODE/node_exporter /usr/local/bin
 node_exporter --version
 sleep 1
