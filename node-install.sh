@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run without sudo
-#=====# Uncomment for CentOS Installation =============#
+#=====# Uncomment if needed (for CentOS) ==============#
 # sudo yum install wget
 # sudo yum install git
 #======================================================#
