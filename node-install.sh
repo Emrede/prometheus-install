@@ -9,8 +9,8 @@
 #==================#
 # GLOBAL VARIABLES #
 #==================#
-NODE="node_exporter-1.0.1.linux-amd64"
-NODELINK="https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz"
+NODE="node_exporter-1.1.2.linux-amd64"
+NODELINK="https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz"
 
 echo "#############################################################"
 echo "# === Prometheus Node Exporter Installation for Ubuntu  === #"
