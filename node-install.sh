@@ -38,7 +38,7 @@ sleep 1
 echo "# === Systemd service is being installed ... === #"
 sleep 1
 
-cd $HOME/prometheus-node-install
+cd $HOME/prometheus-install
 sudo cp node-exporter.service /etc/systemd/system/
 sudo chmod 644 /etc/systemd/system/node-exporter.service
 sudo systemctl daemon-reload
