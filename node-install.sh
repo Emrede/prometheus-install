@@ -26,8 +26,6 @@ loading(){
     echo -ne '\n'
 }
 
-
-
 cd /tmp
 wget $NODELINK
 tar -xzf /tmp/$NODE.tar.gz
@@ -44,6 +42,10 @@ sudo chmod 644 /etc/systemd/system/node-exporter.service
 sudo systemctl daemon-reload
 sudo systemctl enable node-exporter.service
 sudo systemctl start node-exporter.service
+
+echo "# === Configuring firewalld ... === #"
+sudo firewall-cmd --zone=public --add-port=9100/tcp --permanent
+sudo systemctl reload firewalld
 
 loading
 echo "# Service is enabled ... # "
