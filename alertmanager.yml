@@ -1,0 +1,13 @@
+  group_by: [Alertname]
+  # Send all notifications to me.
+  receiver: email-me
+
+receivers:
+- name: email-me
+  email_configs:
+  - to: to@mail.com
+    from: from@mail.com
+    smarthost: smtp.gmail.com:587
+    auth_username: "from@mail.com
+    auth_identity: "from@mail.com"
+    auth_password: "password"
